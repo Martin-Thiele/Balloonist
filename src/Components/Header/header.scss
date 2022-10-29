@@ -1,0 +1,90 @@
+.header{
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    font-family: var(--font-family-headers);
+    background-color: var(--color-black);
+    display: flex;
+    justify-content: space-between;
+    height: 68px;
+    box-sizing: border-box;
+    align-items: center;
+    border-radius: 0px 0px 20px 20px;
+    &__logocontainer{
+        margin-left: 15px;
+        display: flex;
+        align-items: center;
+        &--logo{
+            margin-right: 7.3px;
+        }
+    }
+    &__menu{
+        &--row{
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-left: 0px;
+            height: 38px;
+            &-col{
+                padding-left: 8px;
+                padding-right: 8px;
+                a{
+                    max-height: 21px;
+                    padding: 8px;
+                    font-size: 14px;
+                    text-decoration: none;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    &:hover{
+                        //color: var(--color-blue);
+
+                    }
+                }
+                &__circle{
+                    font-size: 12px;
+                    color: var(--color-black);
+                    margin-left: 10px;
+                    width: 22px;
+                    height: 22px;
+                    text-align: center;
+                    font-weight: 600;
+                    line-height: 22px;
+                    font-family: var(--font-family-default);
+                    background-color: var(--color-blue);
+                    border-radius: 50%;
+                }
+                &__icon{
+                    margin-left: 5px;
+                    fill: white;
+                }
+            }
+        }
+    }
+    &__socials{
+        display: flex;
+        align-items: center;
+        width: 100px;
+        justify-content: space-between;
+        margin-right: 15px;
+        &--item{
+            display: block;
+            fill: white;
+            &:hover{
+                //fill: var(--color-blue);
+            }
+        }
+    }
+}
+
+.active{
+    background-color: var(--color-dark-blue);
+    border-radius: 100px;
+}
+
+.logo{
+    background-color: inherit;
+    border-radius: 0;
+}

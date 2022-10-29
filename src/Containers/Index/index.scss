@@ -1,0 +1,238 @@
+@import '../../mixins.scss';
+
+.slide1{
+    background-repeat: no-repeat;
+    margin-left: 15px;
+    max-width: 100%;
+    margin-right: 15px;
+    height: calc(838px + 68px);
+    padding-top: 68px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background: linear-gradient(rgba(18, 18, 26, 0.95), rgba(18, 18, 26, 0.95)), url("/Noise_2X.png");
+
+    // box-shadow: inset 0 0 0 1500px rgba(0,0,0,0.);
+    // background-repeat: repeat;
+    // background-blend-mode: darken;
+    
+    &__overlay{
+        border-radius: 20px;
+        overflow: hidden;
+        background-color: var(--color-black);
+        position: relative;
+        z-index: -1;
+        height: 100%;
+        &--test{
+            position: absolute;
+            width: 736px;
+            height: 736px;
+            left: 843px;
+            top: 326px;
+            
+            /* Hot Pink/500 */
+            
+            background: #DD00FF;
+            filter: blur(135px);
+        }
+        
+        &--test2{
+            position: absolute;
+            width: 1129px;
+            height: 1316px;
+            left: -155px;
+            top: -23px;
+            
+            /* Celtic Blue/500 */
+            
+            background: #236BCF;
+            filter: blur(135px);
+        }
+        
+        &--test3{
+            position: absolute;
+            width: 1067px;
+            height: 1067px;
+            left: 661px;
+            top: -174px;
+            
+            /* Lavender Blue/500 */
+            
+            background: #BADAFF;
+            /* Blur - 620 */
+            
+            filter: blur(310px);
+        }
+        
+        &--clouds{
+            position: absolute;
+            width: 1853px;
+            height: 401px;
+            left: -172px;
+            top: 596px;
+            
+            background: rgba(240, 247, 255, 0.5);
+            mix-blend-mode: normal;
+            filter: blur(75px);
+        }
+    }
+    &__container{
+        position: absolute;
+        top: 182px;
+        min-height: 300px;
+        border-radius: 25px;
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        &--left{
+            width: 100%;
+            max-width: 650px;
+            margin-top: 91px;
+            margin-left: 89px;
+            @include respond(phone){
+                margin-left: 20px;
+            }
+            &-buttoncontainer{
+                display: flex;
+                justify-content: space-between;
+                width: 300px;
+            }
+        }
+        &--right{
+            img{
+                @include respond(tab-land){
+                    width: 500px;
+                }
+                @include respond(tab-port){
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.slide2{
+    background-repeat: no-repeat;
+    height: 1400px;
+    margin-left: 15px;
+    margin-right: 15px;
+    filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.0));
+    background: linear-gradient(rgba(18, 18, 26, 0.95), rgba(18, 18, 26, 0.95)), url("/Noise_2X.png");
+    border-bottom: solid 1px var(--color-dark-blue);
+    // box-shadow: inset 0 0 0 1500px rgba(0,0,0,0.);
+    // background-repeat: repeat;
+    // background-blend-mode: darken;
+    
+    &__overlay{
+        overflow: hidden;
+        background-color: var(--color-black);
+        position: relative;
+        z-index: -1;
+        height: 100%;
+        &--clouds{
+            position: absolute;
+            width: 869.43px;
+            height: 389.24px;
+            left: 150px;
+            top: 100px;
+            
+            /* Hot Pink/500
+            
+            Hot Pink/500
+            */
+            background: #DD00FF;
+            opacity: 0.34;
+            filter: blur(135px);
+            transform: rotate(-150deg);
+        }
+        
+        &--clouds2{
+            position: absolute;
+            width: 1061px;
+            height: 475px;
+            left: 536px;
+            top: 100px;
+            
+            /* Celtic Blue/500
+            
+            Celtic Blue/500
+            */
+            background: #236BCF;
+            opacity: 0.34;
+            filter: blur(135px);
+        }
+    }
+    &__container{
+        position: absolute;
+        top: 175px;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        &--textcontainer{
+            max-width: 1030px;
+            width: 95%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            &-header{
+                text-align: center;
+            }
+            &-description{
+                text-align: center;
+                max-width: 420px;
+                width: 100%;
+                font-size: 20px;
+                line-height: 140%;
+            }
+        }
+    }
+    &__radar{
+        position: absolute;
+        top: 568px;
+        padding-left: 55px;
+        box-sizing: border-box;
+        width: 100%;
+        @include respond(phone){
+            padding-left: 0px;
+        }
+        &--headercontainer{
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            &-left{
+                font-size: 49px;
+            }
+            &-right{
+                padding-right: 57px;
+                text-align: right;
+                &__header{
+                    font-size: 20px;
+                    line-height: 0px;
+                }
+                &__link{
+                    font-size: 20px;
+                    color: var(--color-pink);
+                }
+            }
+        }
+        &--carousel{
+            margin: auto;
+            align-self: center;
+            display: flex;
+            max-width: 2400px;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+    }
+
+}
+
+.slide3{
+    margin-left: 57px;
+    margin-right: 57px;
+    margin-top: 50px;
+    padding-bottom: 155px;
+    border-bottom: solid 1px var(--color-dark-blue);
+    // box-shadow: inset 0 0 0 1500px rgba(0,0,0,0.);
+    // background-repeat: repeat;
+    // background-blend-mode: darken;
+}

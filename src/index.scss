@@ -1,0 +1,241 @@
+@import 'mixins.scss';
+
+:root{
+  --color-black: #12121A;
+  --color-black2: #15151E;
+  --color-blue: #66ADFF;
+  --color-dark-blue: #2A2A3C;
+  --color-eerie-black: #8686AC;
+  --color-eerie-black2: #3F3F5A;
+  --color-eerie-black3: #A5A5C0;
+  --color-pink: #EB66FF;
+  --font-family-default: 'Plus Jakarta Sans';
+  --font-family-headers: 'Space Mono';
+}
+
+h1{
+  font-size: 76px;
+  font-weight: 600;
+  line-height: 83.6px;
+  margin-top: 0px;
+  @include respond(tab-land) {
+    font-size: 42.75px;
+  }
+  @include respond(tab-port) {
+    font-size: 38px;
+  }
+}
+
+h2{
+  font-size: 49px;
+  font-weight: 600;
+  line-height: 110%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+  @include respond(tab-land) {
+    font-size: 25.75px;
+  }
+  @include respond(tab-port) {
+    font-size: 24.5px;
+  }
+}
+
+h3{
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+h4{
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 140%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+h5{
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 140%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+body {
+  margin: 0;
+  font-family: "Plus Jakarta Sans";
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+  background-color: var(--color-black);
+  position: absolute;
+  min-height: 100%;
+  width: 100%;
+  z-index: 1;
+  font-size: 12px;
+  @include respond(tab-land) {
+    font-size: 6.75px;
+  }
+  @include respond(tab-port) {
+    font-size: 6px;
+  }
+}
+
+p{
+  @include respond(tab-land) {
+    font-size: 56%;
+  }
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+}
+
+
+.gradient-button{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  width: 187px;
+  height: 42px;
+  background: linear-gradient(264.73deg, #236BCF 6.54%, #FA00FF 96.16%);
+  border-radius: 5px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  font-family: var(--font-family-headers);
+  font-style: normal;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  -webkit-transition: background 0.2s ease-in;  
+  -moz-transition: background 0.2s ease-in;  
+  -o-transition: background 0.2s ease-in;  
+  transition: background 0.2s ease-in;  
+  &:hover{
+  }
+}
+
+.transparent-button{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 5px;
+  min-width: 102px;
+  height: 42px;
+  border: 1px solid #FFFFFF;
+  border-radius: 5px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  color: white;
+  text-decoration: none;
+}
+
+.card{
+  background-color: var(--color-black2);
+  width: 325px;
+  height: 592px;
+  border: solid 1px var(--color-dark-blue);
+  margin-right: 15px;
+  border-radius: 5px;
+  &__image{
+    width: 305px;
+    height: 290px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+  }
+  &__authorcontainer{
+    display: flex;
+    margin-left: 25px;
+    align-items: center;
+    &--image{
+      width: 26px;
+      height: 26px;
+      margin-right: 11px;
+    }
+    &--author{
+      color: var(--color-eerie-black2);
+      font-size: 12px;
+      line-height: 140%;
+      margin-right: 11px;
+    }
+    &--dot{
+      margin-right: 11px;
+    }
+    &--date{
+      font-size: 12px;
+      line-height: 140%;
+      color: var(--color-eerie-black3);
+    }
+  }
+  &__labelcontainer{
+    margin-left: 25px;
+    &--button{
+      &:hover{
+        cursor: pointer;
+      }
+      border-radius: 100px;
+      padding: 6px 12px;
+      font-family: var(--font-family-headers);
+      font-size: 12px;
+    }
+  }
+  &__contentcontainer{
+    margin-left: 25px;
+    margin-right: 25px;
+    &--title{
+      font-size: 21px;
+      line-height: 140%;
+    }
+  }
+  &__linkcontainer{
+    margin-left: 25px;
+    &--button{
+      border-radius: 5px;
+      padding: 6px 12px;
+      font-family: var(--font-family-headers);
+      font-size: 12px;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.button-blue{
+  background-color: #8ADAFF;
+  color: #1D5AAF;
+}
+.button-pink{
+  background-color: #FCE5FF;
+  color: #DD00FF;
+}
+.button-pink{
+  background-color: #FDF9CE;
+  color: #12121A;
+}
+
+
+html {  
+  @include respond(tab-land) { // width < 1200?
+    font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+  }
+  
+  @include respond(tab-port) { // width < 900?
+    font-size: 50%; //1 rem = 8px, 8/16 = 50%
+  }
+}

@@ -1,0 +1,79 @@
+.footer{
+    max-width: 100%;
+    height: 295px;
+    font-family: var(--font-family-headers);
+    background-color: var(--color-black);
+    display: flex;
+    justify-content: space-between;
+    padding-top: 38px;
+    &__container, &__rightcontainer{
+        box-sizing: border-box;
+        padding-left: 40px;
+        padding-right: 40px;
+        &--logocontainer{
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+            &-logo{
+                margin-right: 7.3px;
+            }
+        }
+        &--disclaimer{
+            margin-top: 33px;
+            max-width: 450px;
+            &-header{
+                font-family: var(--font-family-default);
+                color: #ffffff;
+                line-height: 140%;
+            }
+            &-text{
+                font-family: var(--font-family-default);
+                color: var(--color-eerie-black);
+                line-height: 140%;
+                font-size: 12px;
+            }
+        }
+    }
+    &__rightcontainer{
+        max-width: 100%;
+        display: flex;
+        flex: 0 1 auto;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        &--subcontainer{
+            width: 232px;
+            max-width: 100%;
+            &-links{
+                margin-top: 33px;
+                &__linkcontainer{
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 7px;
+                    &--logo{
+                        margin-right: 10px;
+                        width: 13px;
+                        fill: white;
+                        &:hover{
+                        }
+                    }
+                    &--link{
+                        font-family: var(--font-family-default);
+                        font-size: 12px;
+                        line-height: 140%;
+                        color: var(--color-eerie-black);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.active{
+    background-color: var(--color-dark-blue);
+    border-radius: 100px;
+}
+
+.logo{
+    background-color: inherit;
+    border-radius: 0;
+}
