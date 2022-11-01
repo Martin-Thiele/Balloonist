@@ -20,7 +20,7 @@ function Footer() {
             <img alt="filler" className="footer__container--logocontainer-text" src={text} />
           </div>
         </NavLink>
-        <div className="footer__container--disclaimer" style={{ width: 450 }}>
+        <div className="footer__container--disclaimer">
           <h5 className="footer__container--disclaimer-header">©2022 Ballonist ApS - All rights reserved</h5>
           <p className="footer__container--disclaimer-text">Legal disclamer - nothing on this site is legal, business, investment, or tax advice. This site simply contains a curation of problems and solutions provided by and for WEB3 communities.</p>
         </div>
