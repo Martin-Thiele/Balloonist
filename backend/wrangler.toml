@@ -1,0 +1,14 @@
+name = "backend"
+main = "src/index.ts"
+compatibility_date = "2022-11-08"
+usage_model = "bundled"
+
+[env.production]
+kv_namespaces = [{ id = "cdcbb02903d546aabfc83d6ccfc8b6b2", binding = "kv" }]
+
+[env.staging]
+kv_namespaces = [{ id = "cdcbb02903d546aabfc83d6ccfc8b6b2", binding = "kv" }]
+
+
+[triggers]
+crons = [ ]

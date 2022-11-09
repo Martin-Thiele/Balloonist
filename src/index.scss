@@ -8,7 +8,10 @@
   --color-eerie-black: #8686AC;
   --color-eerie-black2: #3F3F5A;
   --color-eerie-black3: #A5A5C0;
+  --color-eerie-black4: #F0F0F5;
+  --color-eerie-black5: #E1E1EA;
   --color-pink: #EB66FF;
+  --color-green: #02E7B2;
   --font-family-default: 'Plus Jakarta Sans';
   --font-family-headers: 'Space Mono';
 }
@@ -225,6 +228,11 @@ p{
   background-color: #FCE5FF;
   color: #DD00FF;
 }
+.button-pink{
+  background-color: #FDF9CE;
+  color: #12121A;
+}
+
 .button-pink{
   background-color: #FDF9CE;
   color: #12121A;

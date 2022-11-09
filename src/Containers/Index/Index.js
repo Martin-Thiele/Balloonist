@@ -3,94 +3,44 @@ import bubble from './img/Bubble.png'
 import { Fragment } from 'react';
 import balloonist from './img/balloonist.png'
 
+import React, { Component } from 'react';  
+
 import balance from './img/balance.png'
 import radar from './img/radar.png'
 import shield from './img/shield.png'
 import globe from './img/globe.png'
 import Banner from '../../Components/Banner/banner'
 
+import axios from 'axios';
+
 function Carousel(props) {
-
-  var cards = [{
-    title: "Risk assessment of MakerDAOs depeg from the dollar",
-    label: "SUPPORT",
-    link: "https://docs.google.com/document/d/1AblNWpubhPLA5u-hnPLR92Xz5o4LSUlug2TKSb4SNRg/",
-    linktype: "GOOGLE DOC",
-    date: "AUG 15, 2022",
-    labelcolor: "blue",
-    linkcolor: "pink",
-    image: "balance"
-  },
-  {
-    title: "MakerDAOs response to the TornadoCash/USDC-event",
-    label: "EXTERNAL MONITORING",
-    link: "https://docs.google.com/document/d/1AblNWpubhPLA5u-hnPLR92Xz5o4LSUlug2TKSb4SNRg/",
-    linktype: "GOOGLE DOC",
-    date: "AUG 15, 2022",
-    labelcolor: "yellow",
-    linkcolor: "pink",
-    image: "radar"
-  },
-  {
-    title: "Decentralization Matrix",
-    label: "INTERNAL MONITORING",
-    link: "https://docs.google.com/document/d/1AblNWpubhPLA5u-hnPLR92Xz5o4LSUlug2TKSb4SNRg/",
-    linktype: "GOOGLE DOC",
-    date: "AUG 15, 2022",
-    labelcolor: "blue",
-    linkcolor: "pink",
-    image: "shield"
-  },
-  {
-    title: "Initial impact assessment of Markets in Crypto Assets (MICA) applying to MakerDAO",
-    label: "SUPPORT",
-    labelcolor: "yellow",
-    link: "https://docs.google.com/document/d/1AblNWpubhPLA5u-hnPLR92Xz5o4LSUlug2TKSb4SNRg/",
-    date: "AUG 15, 2022",
-    linktype: "GOOGLE DOC",
-    linkcolor: "pink",
-    image: "globe"
-  },
-  {
-    title: "Initial impact assessment of Markets in Crypto Assets (MICA) applying to MakerDAO",
-    label: "SUPPORT",
-    labelcolor: "yellow",
-    link: "https://docs.google.com/document/d/1AblNWpubhPLA5u-hnPLR92Xz5o4LSUlug2TKSb4SNRg/",
-    date: "AUG 15, 2022",
-    linktype: "GOOGLE DOC",
-    linkcolor: "pink",
-    image: "globe"
-  },
-
-]
-
   var values = [];
-  for (var i = 0; i < cards.length; i++){
-    var card = cards[i];
+  for (var i = 0; i < Math.min(8, props.products.length); i++) {
+    var card = props.products[i];
     var img = ""
-    switch(card.image){
+    switch (card.image) {
       case "balance":
         img = balance;
         break;
       case "radar":
         img = radar;
         break;
-      case "shield": 
+      case "shield":
         img = shield;
         break;
       case "globe":
         img = globe;
         break;
-      default: 
+      default:
         img = globe;
         break;
     }
 
     values.push(
       <div key={i} className='card'>
-        <img src={img} className='card__image'/>
+        <img src={img} className='card__image' />
         <div className='card__authorcontainer'>
-          <img src={balloonist} className='card__authorcontainer--image'/>
+          <img src={balloonist} className='card__authorcontainer--image' />
           <p className='card__authorcontainer--author'>BALLONIST.XYZ</p>
           <p className='card__authorcontainer--dot'>•</p>
           <p className='card__authorcontainer--date'>{card.date}</p>
@@ -110,29 +60,45 @@ function Carousel(props) {
   return values;
 }
 
-function Home() {
+
+class Home extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      products: []
+    }
+  }
+
+  async componentDidMount(){
+    var response = await axios.get("https://backend.balloonist.workers.dev/products")
+    this.setState({
+      products: response.data
+    })
+  }
+
+  render() {
     return (
       <Fragment>
         <div className='slide1'>
-            <div className='slide1__overlay'>
-                <div className='slide1__overlay--test'></div>
-                <div className='slide1__overlay--test2'></div>
-                <div className='slide1__overlay--test3'></div>
-                <div className='slide1__overlay--clouds'></div>
+          <div className='slide1__overlay'>
+            <div className='slide1__overlay--test'></div>
+            <div className='slide1__overlay--test2'></div>
+            <div className='slide1__overlay--test3'></div>
+            <div className='slide1__overlay--clouds'></div>
+          </div>
+          <div className='slide1__container'>
+            <div className='slide1__container--left'>
+              <h1>What laws apply to your DAO or DEFI-product? How to comply?</h1>
+              <h3>Identifying and documenting regulatory risk<br />Working out best practices</h3>
+              <div className='slide1__container--left-buttoncontainer'>
+                <a href='/products' className='gradient-button'>SEE THE PRODUCTS</a>
+                <a href='//eksternside.dk/tasks' className='transparent-button'>TASKS</a>
+              </div>
             </div>
-            <div className='slide1__container'>
-                <div className='slide1__container--left'>
-                    <h1>What laws apply to your DAO or DEFI-product? How to comply?</h1>
-                    <h3>Identifying and documenting regulatory risk<br/>Working out best practices</h3>
-                    <div className='slide1__container--left-buttoncontainer'>
-                      <a href='/products' className='gradient-button'>SEE THE PRODUCTS</a>
-                      <a href='//eksternside.dk/tasks' className='transparent-button'>TASKS</a>
-                    </div>
-                </div>
-                <div className='slide1__container--right'>
-                  <img src={bubble}/>
-                </div>
+            <div className='slide1__container--right'>
+              <img src={bubble} />
             </div>
+          </div>
         </div>
         <div className='slide2'>
           <div className='slide2__overlay'>
@@ -155,18 +121,18 @@ function Home() {
               </div>
             </div>
             <div className='slide2__radar--carousel'>
-              <Carousel/>
+              <Carousel products={this.state.products} />
             </div>
           </div>
         </div>
         <div className='slide3'>
-          <Banner title="Apply Bells and Whistles" description="Be the first to know if a threshold is exceeded" link="subscribe" buttontext="SUBSCRIBE"/>
+          <Banner title="Apply Bells and Whistles" description="Be the first to know if a threshold is exceeded" link="subscribe" buttontext="SUBSCRIBE" />
         </div>
 
       </Fragment>
 
     );
   }
-  
-  export default Home;
-  
+}
+
+export default Home;
