@@ -124,7 +124,7 @@ class Products extends Component {
                     <div className='pslide1__content'>
                         <div className='pslide1__content--top'>
                             <h1 className='pslide1__content--top-header'>Products</h1>
-                            <a href="" className='transparent-button'>REQUEST PRODUCT</a>
+                            <a href="https://makerdao.typeform.com/to/bulqMj5V" target="_blank" rel="noreferrer" className='transparent-button'>REQUEST PRODUCT</a>
                         </div>
                         <div className='pslide1__content--products'>
                             <div className='pslide1__content--products-filters'>
@@ -162,7 +162,7 @@ class Products extends Component {
 
                 </div>
                 <div className='pslide2'>
-                    <Banner title="Need  help with anything?" description="Report a problem - we will let you know as soon the product is ready!" link="subscribe" buttontext="REQUEST PRODUCT" />
+                    <Banner title="Need  help with anything?" description="Report a problem - we will let you know as soon the product is ready!" link="https://makerdao.typeform.com/to/bulqMj5V" target="_blank" rel="noreferrer" buttontext="REQUEST PRODUCT" />
                 </div>
             </Fragment>
         )

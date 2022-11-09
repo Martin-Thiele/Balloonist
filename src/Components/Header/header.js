@@ -47,7 +47,7 @@ class Header extends Component {
               </NavLink>
             </li>
             <li className="header__menu--row-col">
-              <a href="//eksternside.dk/tasks">
+              <a href="http://docs.google.com/spreadsheets/d/1eZa4Vl6o5gSPp5wDF9kDwH2ztCjjwyLxnnQMvUj8uYo/edit#gid=0" target="_blank" rel="noreferrer"> 
                 <p className='header__menu--row-col__text'>TASKS</p>
                 <Arrow className='header__menu--row-col__icon' />
               </a>
@@ -57,10 +57,10 @@ class Header extends Component {
           </ul>
         </div>
         <div className="header__socials">
-          <a href="//t.me/telegram" target="_blank" rel="noreferrer"><Telegram className="header__socials--item" /></a>
-          <a href="//twitter.com/twitter" target="_blank" rel="noreferrer"><Twitter className="header__socials--item" /></a>
-          <a href="//discord.com/discord" target="_blank" rel="noreferrer"><Discord className="header__socials--item" /></a>
-          <a href="//linkedin.com/linkedin" target="_blank" rel="noreferrer"><LinkedIn className="header__socials--item" /></a>
+          <a href="mailto:yourfriends@balloonist.xyz" target="_blank" rel="noreferrer"><Telegram className="header__socials--item" /></a>
+          <a href="//twitter.com/yourballoonist" target="_blank" rel="noreferrer"><Twitter className="header__socials--item" /></a>
+          <a href="//discordapp.com/users/Balloonist#6963" target="_blank" rel="noreferrer"><Discord className="header__socials--item" /></a>
+          <a href="//linkedin.com/in/sorenterpjessen/" target="_blank" rel="noreferrer"><LinkedIn className="header__socials--item" /></a>
         </div>
       </div>
     )

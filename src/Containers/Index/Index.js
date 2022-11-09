@@ -89,10 +89,10 @@ class Home extends Component {
           <div className='slide1__container'>
             <div className='slide1__container--left'>
               <h1>What laws apply to your DAO or DEFI-product? How to comply?</h1>
-              <h3>Identifying and documenting regulatory risk<br />Working out best practices</h3>
+              <h3>Identifying and documenting regulatory risk<br />Providing you with weekly tailor-made updates<br />Working out best practices</h3>
               <div className='slide1__container--left-buttoncontainer'>
                 <a href='/products' className='gradient-button'>SEE THE PRODUCTS</a>
-                <a href='//eksternside.dk/tasks' className='transparent-button'>TASKS</a>
+                <a href='//docs.google.com/spreadsheets/d/1eZa4Vl6o5gSPp5wDF9kDwH2ztCjjwyLxnnQMvUj8uYo/edit#gid=0'target="_blank" rel="noreferrer" className='transparent-button'>TASKS</a>
               </div>
             </div>
             <div className='slide1__container--right'>
@@ -109,7 +109,7 @@ class Home extends Component {
             <div className='slide2__container--textcontainer'>
               <h2 className='slide2__container--textcontainer-header'>Need to discuss regulatory questions? Reach out, this is why we are here!</h2>
               <p className='slide2__container--textcontainer-description'>Monitoring  activities to detect risk Suggesting best practice for risk mitigation</p>
-              <a href='//eksternside.dk/tasks' className='transparent-button'>BOOK A MEETING</a>
+              <a href='//calendly.com/balloonist/30min' target="_blank" rel="noreferrer"  className='transparent-button'>BOOK A MEETING</a>
             </div>
           </div>
           <div className='slide2__radar'>
@@ -117,7 +117,7 @@ class Home extends Component {
               <p className='slide2__radar--headercontainer-left'>Risk Radar</p>
               <div className='slide2__radar--headercontainer-right'>
                 <p className='slide2__radar--headercontainer-right__header'>Present observations are listed here</p>
-                <a href="" className='slide2__radar--headercontainer-right__link'>See all</a>
+                <a href="https://docs.google.com/document/d/1CmsAYSOkKO7pICMxuFJ2PNFdRZ71CFtShW1OlT3FVH4/edit" target="_blank" rel="noreferrer" className='slide2__radar--headercontainer-right__link'>See all</a>
               </div>
             </div>
             <div className='slide2__radar--carousel'>
@@ -126,7 +126,7 @@ class Home extends Component {
           </div>
         </div>
         <div className='slide3'>
-          <Banner title="Apply Bells and Whistles" description="Be the first to know if a threshold is exceeded" link="subscribe" buttontext="SUBSCRIBE" />
+          <Banner title="Apply Bells and Whistles" description="Receive a weekly update tailor-made for you" link="https://makerdao.typeform.com/to/O9lFF1gk" buttontext="SUBSCRIBE" />
         </div>
 
       </Fragment>

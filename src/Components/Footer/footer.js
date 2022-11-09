@@ -32,16 +32,16 @@ function Footer() {
           <div className="footer__rightcontainer--subcontainer-links">
             <div className="footer__rightcontainer--subcontainer-links__linkcontainer">
               <Discord className="footer__rightcontainer--subcontainer-links__linkcontainer--logo" />
-              <a href="" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">Discord</a>
+              <a href="http://discordapp.com/users/Balloonist#6963" target="_blank" rel="noreferrer" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">Discord</a>
             </div>
             <div className="footer__rightcontainer--subcontainer-links__linkcontainer">
               <Twitter className="footer__rightcontainer--subcontainer-links__linkcontainer--logo" />
-              <a href="" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">Twitter</a>
+              <a href="http://twitter.com/yourballoonist" target="_blank" rel="noreferrer" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">Twitter</a>
             </div>
 
             <div className="footer__rightcontainer--subcontainer-links__linkcontainer">
               <Telegram className="footer__rightcontainer--subcontainer-links__linkcontainer--logo" />
-              <a href="" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">Mail</a>
+              <a href="mailto:yourfriends@balloonist.xyz" target="_blank" rel="noreferrer" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">Mail</a>
             </div>
 
             <div className="footer__rightcontainer--subcontainer-links__linkcontainer">
@@ -55,16 +55,16 @@ function Footer() {
           <h4>QUICK NAVIGATION</h4>
           <div className="footer__rightcontainer--subcontainer-links">
             <div className="footer__rightcontainer--subcontainer-links__linkcontainer">
-              <a href="" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">Products</a>
+              <a href="/products" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">Products</a>
             </div>
             <div className="footer__rightcontainer--subcontainer-links__linkcontainer">
-              <a href="" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">Tasks</a>
+              <a href="https://docs.google.com/spreadsheets/d/1eZa4Vl6o5gSPp5wDF9kDwH2ztCjjwyLxnnQMvUj8uYo/edit#gid=0" target="_blank" rel="noreferrer" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">Tasks</a>
             </div>
             <div className="footer__rightcontainer--subcontainer-links__linkcontainer">
-              <a href="" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">About</a>
+              <a href="/about" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">About</a>
             </div>
             <div className="footer__rightcontainer--subcontainer-links__linkcontainer">
-              <a href="" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">The compass</a>
+              <a href="/compass" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">The compass</a>
             </div>
           </div>
         </div>
