@@ -38,15 +38,15 @@ function Carousel(props) {
 
     values.push(
       <div key={i} className='card'>
-        <img src={img} className='card__image' />
+        <img src={img} alt={card.image} className='card__image' />
         <div className='card__authorcontainer'>
-          <img src={balloonist} className='card__authorcontainer--image' />
+          <img src={balloonist} alt={"Author"} className='card__authorcontainer--image' />
           <p className='card__authorcontainer--author'>BALLONIST.XYZ</p>
           <p className='card__authorcontainer--dot'>•</p>
           <p className='card__authorcontainer--date'>{card.date}</p>
         </div>
         <div className='card__labelcontainer'>
-          <a href={card.label}><button className={`card__labelcontainer--button ${`button-${card.labelcolor}`}`}>{card.label}</button></a>
+          <button className={`card__labelcontainer--button ${`button-${card.labelcolor}`}`}>{card.label}</button>
         </div>
         <div className='card__contentcontainer'>
           <p className='card__contentcontainer--title'>{card.title}</p>
@@ -96,7 +96,7 @@ class Home extends Component {
               </div>
             </div>
             <div className='slide1__container--right'>
-              <img src={bubble} />
+              <img src={bubble} alt="Globe" />
             </div>
           </div>
         </div>

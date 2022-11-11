@@ -1,6 +1,6 @@
 import './footer.scss'
 
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from './img/logo.svg'
 import text from './img/text.svg'
 
@@ -64,7 +64,7 @@ function Footer() {
               <a href="/about" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">About</a>
             </div>
             <div className="footer__rightcontainer--subcontainer-links__linkcontainer">
-              <a href="/compass" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">The compass</a>
+              {/* <a href="/compass" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">The compass</a> */}
             </div>
           </div>
         </div>

@@ -22,7 +22,7 @@ class Header extends Component {
   }
 
   async componentDidMount(){
-    if(this.state.products.length == 0){
+    if(this.state.products.length === 0){
       var response = await axios.get("https://backend.balloonist.workers.dev/products")
       this.setState({
         products: response.data
@@ -53,7 +53,7 @@ class Header extends Component {
               </a>
             </li>
             <li className="header__menu--row-col"><NavLink to="/about">ABOUT</NavLink></li>
-            <li className="header__menu--row-col"><NavLink to="/compass">THE COMPASS</NavLink></li>
+            {/* <li className="header__menu--row-col"><NavLink to="/compass">THE COMPASS</NavLink></li> */}
           </ul>
         </div>
         <div className="header__socials">
