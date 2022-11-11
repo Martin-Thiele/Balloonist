@@ -122,7 +122,7 @@
                     }
                     &--filters{
                         max-height: 366px;
-                        overflow-y: auto;
+                        overflow-y: scroll;
                         gap: 5px;
                         display: flex;
                         flex-direction: column;

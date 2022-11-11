@@ -46,7 +46,7 @@ function Footer() {
 
             <div className="footer__rightcontainer--subcontainer-links__linkcontainer">
               <LinkedIn className="footer__rightcontainer--subcontainer-links__linkcontainer--logo" />
-              <a href="" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">Linkedin</a>
+              <a href="http://linkedin.com/in/sorenterpjessen/" target="_blank" rel="noreferrer" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">Linkedin</a>
             </div>
           </div>
 

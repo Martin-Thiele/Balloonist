@@ -11,6 +11,7 @@ import shield from './img/shield.png'
 import globe from './img/globe.png'
 import Banner from '../../Components/Banner/banner'
 
+
 import axios from 'axios';
 
 function Carousel(props) {
