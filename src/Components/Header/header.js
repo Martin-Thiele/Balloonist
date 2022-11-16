@@ -14,30 +14,62 @@ import axios from 'axios';
 
 class Header extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
-      products: []
+      products: [],
+      checked: false
     }
   }
 
-  async componentDidMount(){
-    if(this.state.products.length === 0){
+  async componentDidMount() {
+    if (this.state.products.length === 0) {
       var response = await axios.get("https://backend.balloonist.workers.dev/products")
       this.setState({
-        products: response.data
+        products: response.data,
       })
     }
   }
 
+  setChecked = (val) => {
+    console.log(val)
+    this.setState({
+      checked: val
+    })
+  }
+
 
   render() {
-    return(
+    return (
       <div className="header">
         <NavLink to="/" end className="logo"><div className="header__logocontainer">
           <img alt="filler" className="header__logocontainer--logo" src={logo} />
           <img alt="filler" className="header__logocontainer--text" src={text} />
         </div></NavLink>
+        <div className="header__mobile">
+          <div className="header__mobile--container">
+          <input id="toggle" checked={this.state.checked} onChange={(e) => this.setChecked(e.target.checked)} type="checkbox"></input>
+
+            <label htmlFor="toggle" className="hamburger">
+              <div className="top-bun"></div>
+              <div className="meat"></div>
+              <div className="bottom-bun"></div>
+            </label>
+
+            <div className="nav">
+              <div className="nav-wrapper">
+                <nav>
+                  <NavLink to="/products" onClick={() => this.setChecked(false)}><p>PRODUCTS <span>{this.state.products.length}</span></p></NavLink>
+                  <a onClick={() => this.setChecked(false)} href="http://docs.google.com/spreadsheets/d/1eZa4Vl6o5gSPp5wDF9kDwH2ztCjjwyLxnnQMvUj8uYo/edit#gid=0" target="_blank" rel="noreferrer">
+                    <p>TASKS<Arrow className='nav-wrapper__arrow' /></p>
+                  </a>
+                  <NavLink to="/about" onClick={() => this.setChecked(false)}><p>ABOUT</p></NavLink>
+                  {/* <NavLink to="" href="#">SERVICES</NavLink> */}
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="header__menu">
           <ul className="header__menu--row">
             <li className="header__menu--row-col">
@@ -47,7 +79,7 @@ class Header extends Component {
               </NavLink>
             </li>
             <li className="header__menu--row-col">
-              <a href="http://docs.google.com/spreadsheets/d/1eZa4Vl6o5gSPp5wDF9kDwH2ztCjjwyLxnnQMvUj8uYo/edit#gid=0" target="_blank" rel="noreferrer"> 
+              <a href="http://docs.google.com/spreadsheets/d/1eZa4Vl6o5gSPp5wDF9kDwH2ztCjjwyLxnnQMvUj8uYo/edit#gid=0" target="_blank" rel="noreferrer">
                 <p className='header__menu--row-col__text'>TASKS</p>
                 <Arrow className='header__menu--row-col__icon' />
               </a>

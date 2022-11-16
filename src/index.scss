@@ -80,12 +80,6 @@ body {
   width: 100%;
   z-index: 1;
   font-size: 12px;
-  @include respond(tab-land) {
-    font-size: 6.75px;
-  }
-  @include respond(tab-port) {
-    font-size: 6px;
-  }
 }
 
 p{
@@ -228,6 +222,11 @@ p{
   background-color: #FCE5FF;
   color: #DD00FF;
 }
+
+.button-no-border{
+  border: none
+}
+
 .button-pink{
   background-color: #FDF9CE;
   color: #12121A;

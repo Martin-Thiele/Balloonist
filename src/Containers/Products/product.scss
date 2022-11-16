@@ -1,20 +1,19 @@
 @import '../../mixins.scss';
 
 .pslide1{
-    background-repeat: no-repeat;
     max-width: 100%;
-    height: 2170px;
     filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0));
     background: linear-gradient(rgba(18, 18, 26, 0.95), rgba(18, 18, 26, 0.95)), url("/Noise_2X.png");
     // box-shadow: inset 0 0 0 1500px rgba(0,0,0,0.);
     // background-repeat: repeat;
     // background-blend-mode: darken;
     &__overlay{
-        overflow: hidden;
         background-color: var(--color-black);
-        position: relative;
+        position: absolute;
         z-index: -1;
         height: 100%;
+        overflow: hidden;
+        width: 100%;
         &--ellipse1{
             position: absolute;
             width: 736px;
@@ -54,19 +53,17 @@
     }
     &__content{
         max-width: 1500px;
-        position: absolute;
-        top: 84px;
-        width: 100%;
-        margin-left: 15px;
-        margin-right: 15px;
+        box-sizing: border-box;
+        padding-top: 84px;
         box-sizing: border-box;
         display: flex;
+        justify-content: center;
         left: 0;
         right: 0;
-        margin-right: auto;
-        margin-left: auto;
         flex-direction: column;
+        margin: auto;
         &--top{
+            flex-wrap: wrap;
             height: 140px;
             width: 100%;
             padding-left: 35px;
@@ -75,6 +72,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            
             margin-bottom: 38px;
             &-header{
                 margin-bottom: 0px;
@@ -85,6 +83,8 @@
             max-width: 1500px;
             border-radius: 20px;
             display: flex;
+            justify-content: center;
+            margin: auto;
             background-color: var(--color-eerie-black4);
             margin-bottom: 51px;
             &-filters{
@@ -99,6 +99,9 @@
                 gap: 10px;
                 border-top-left-radius: inherit;
                 border-bottom-left-radius: inherit;
+                @include respond(tab-land) {
+                    display: none
+                }
                 &__container{
                     min-height: 50px;
                     width: 300px;
@@ -163,12 +166,17 @@
                 }
             }
             &-content{
-                width: 100%;
+                box-sizing: border-box;
                 margin-top: 41px;
-                padding-left: 42px;
-                padding-right: 40px;
                 margin-bottom: 51px;
+                margin-left: 42px;
+                margin-right: 42px;
+                @include respond(phone) {
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
                 &__searchcontainer{
+                    box-sizing: border-box;
                     background-color: white;
                     border-radius: 5px;;
                     padding: 10px;
@@ -212,22 +220,27 @@
     box-sizing: border-box;
     border-radius: 5px;
     box-shadow: 0px 4px 13px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
     &__topcontainer{
         padding: 10px;
         box-sizing: border-box;
         display: flex;
-        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
         &--image{
+            flex: 1 1 0;
             width: 160px;
             height: 160px;
         }
         &--content{
             margin-left: 30px;
+            max-width: 825px;
             width: 100%;
             &-top{
                 display: flex;
                 align-items: center;
                 width: 100%;
+                flex-wrap: wrap;
                 justify-content: space-between;
                 &__author{
                     font-family: var(--font-family-headers);
@@ -252,7 +265,8 @@
                     font-size: 12px;
                 }
                 &__new{
-                    height: 29px;
+                    min-height: 29px;
+                    padding: 4px 14px 4px 14px;
                     font-family: var(--font-family-headers);
                     font-size: 12px;
                     background-color: var(--color-green);
@@ -272,7 +286,8 @@
                     font-size: 21px;
                     line-height: 29.4px;
                     color: var(--color-black);
-                    width: 570px;
+                    width: 100%;
+                    max-width: 570px;
                     font-weight: 600;
                 }
             }
@@ -301,13 +316,16 @@
         }
     }
     &__bottomcontainer{
-        height: 49px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         border-top: solid 1px var(--color-eerie-black4);
         display: flex;
         align-items: center;
         &--tags{
+            flex-wrap: wrap;
             margin-left: 10px;
-            gap: 5px;
+            row-gap: 10px;
+            column-gap: 5px;
             display: flex;
             &-button{
                 height: 29px;

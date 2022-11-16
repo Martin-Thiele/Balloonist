@@ -107,7 +107,7 @@ class Products extends Component {
                                     <p className='product__topcontainer--content-top__date'>{item.date}</p>
                                     <button className='product__topcontainer--content-top__new'>NEW PRODUCT!</button>
                                 </div>
-                                <a href={item.link} target="_blank" rel="noreferrer"><button className={`card__linkcontainer--button ${`button-${item.linkcolor}`}`}>{item.linktype}</button></a>
+                                <a href={item.link} target="_blank" rel="noreferrer"><button className={`card__linkcontainer--button button-no-border ${`button-${item.linkcolor}`}`}>{item.linktype}</button></a>
                             </div>
                             <div className='product__topcontainer--content-titlecontainer'>
                                 <p className='product__topcontainer--content-titlecontainer__title'>{item.title}</p>
