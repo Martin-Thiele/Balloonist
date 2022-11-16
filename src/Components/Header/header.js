@@ -32,7 +32,6 @@ class Header extends Component {
   }
 
   setChecked = (val) => {
-    console.log(val)
     this.setState({
       checked: val
     })
