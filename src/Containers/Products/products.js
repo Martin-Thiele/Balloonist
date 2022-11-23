@@ -10,7 +10,6 @@ import shield from '../Index/img/shield.png'
 import globe from '../Index/img/globe.png'
 import balloonist from '../Index/img/balloonist.png'
 
-
 function CreateTags(props){
     var values = [];
     for (var i = 0; i < props.tags.length; i++){
