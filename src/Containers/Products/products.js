@@ -32,27 +32,30 @@ class Products extends Component {
 
             }
         }
+        this.CreateFilters = this.CreateFilters.bind(this);
         this.CreateFilter = this.CreateFilter.bind(this);
-        // this.setBoolFilter = this.setBoolFilter.bind(this);
     }
 
-    setBoolFilter = (key) => {
+    setBoolFilter(e){
+        const key = e.target.getAttribute("data-key")
         var current = this.state.filters
         current[key] = !!current[key] ? !current[key] : true
         this.setState({
             filters: current
         })
-        console.log(this.state.filters)
     }
-    CreateFilter = (props) => {
+    CreateFilter(props){
         var values = [];
         if (!props.names) {
+            return values;
+        }
+        if(!this || !this.setBoolFilter){
             return values;
         }
         for (var name of props.names) {
             values.push(
                 <div key={name} className='pslide1__content--products-filters__container--filters-filter'>
-                    <input data-key={name} type="checkbox" className='pslide1__content--products-filters__container--filters-filter__check' onClick={(e) => this.setBoolFilter(e.target.getAttribute("data-key"))} />
+                    <input data-key={name} type="checkbox" className='pslide1__content--products-filters__container--filters-filter__check' onClick={(e) => this.setBoolFilter(e)} />
                     <p className='pslide1__content--products-filters__container--filters-filter__label'>{name}</p>
                 </div>
             )
@@ -190,7 +193,7 @@ class Products extends Component {
 
 
 
-    CreateFilters = () => {
+    CreateFilters(){
         var values = [];
         try {
             for (var filters of this.state.availableFilters) {
