@@ -11,6 +11,7 @@ import globe from '../Index/img/globe.png'
 import balloonist from '../Index/img/balloonist.png'
 
 function CreateTags(props){
+    console.log("tag", props)
     var values = [];
     for (var i = 0; i < props.tags.length; i++){
         values.push(
@@ -35,6 +36,7 @@ class Products extends Component {
     }
 
     CreateProducts = (props) => {
+        console.log("prod", props)
         var values = [];
         if(!props.products){
             return values;
@@ -135,6 +137,7 @@ class Products extends Component {
     }
 
     setSearchFilter = (str) => {
+        console.log("xd" + " " + str)
         var current = this.state.filters
         current["search"] = str
         this.setState({
@@ -143,6 +146,7 @@ class Products extends Component {
     }
 
     setBoolFilter = (key) => {
+        console.log("yo" + " " + key)
         var current = this.state.filters
         current[key] = !!current[key] ? !current[key] : true
         this.setState({
