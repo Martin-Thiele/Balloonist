@@ -169,6 +169,7 @@ class Products extends Component {
     }
 
     CreateFilter = (props) => {
+        console.log("filter" + " " + props)
         var values = [];
         for (var j = 0; j < props.names.length; j++) {
             var name = props.names[j]
@@ -183,6 +184,7 @@ class Products extends Component {
     }
 
     CreateFilters = () => {
+        console.log("hello" + " " + this.state.availableFilters)
         var values = [];
         for (var filters of this.state.availableFilters) {
             values.push(
