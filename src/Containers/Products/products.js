@@ -184,9 +184,10 @@ class Products extends Component {
     }
 
     CreateFilters = () => {
-        console.log("hello" + " " + this.state.availableFilters)
+        console.log("hello" + " " + this.state.availableFilters.length)
         var values = [];
         for (var filters of this.state.availableFilters) {
+            console.log(filters)
             values.push(
                 <div key={filters.title} className='pslide1__content--products-filters__container'>
                     <p className='pslide1__content--products-filters__container--title'>{filters.title}</p>
