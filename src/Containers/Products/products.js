@@ -10,10 +10,9 @@ import shield from '../Index/img/shield.png'
 import globe from '../Index/img/globe.png'
 import balloonist from '../Index/img/balloonist.png'
 
-function CreateTags(props){
-    console.log("tag", props)
+function CreateTags(props) {
     var values = [];
-    for (var i = 0; i < props.tags.length; i++){
+    for (var i = 0; i < props.tags.length; i++) {
         values.push(
             <button key={i} className='product__bottomcontainer--tags-button'>{props.tags[i]}</button>
         )
@@ -23,120 +22,124 @@ function CreateTags(props){
 
 
 class Products extends Component {
-    
+
     constructor(props) {
         super(props)
         this.state = {
             products: [],
             availableFilters: [],
             filters: {
-                
+
             }
         }
     }
 
     CreateProducts = (props) => {
         var values = [];
-        if(!props.products){
-            return values;
-        }
-        var keys = Object.keys(this.state.filters);
-        var fs = this.state.filters
-        var filtered = keys.filter(function(key) {
-            return fs[key]
-        });
+        try {
 
-        var lowercaseFs = !!this.state.filters ? filtered.map(f => f.toLowerCase()).filter(f => f !== 'search') : []
-        var lower = this.state.filters.search ? this.state.filters.search.toLowerCase() : undefined
-        
-        for (var i = 0; i < Math.min(8, props.products.length); i++) {
-            var item = props.products[i];
-            var itemFilters = !!item.filters ? item.filters.map(f => f.toLowerCase()) : []
-
-            // search filter
-            if(this.state.filters && !!this.state.filters.search && Object.keys(this.state.filters).includes("search")){
-                if(!item.description.toLowerCase().includes(lower) && !item.title.toLowerCase().includes(lower)){
-                    continue;
-                }
+            if (!props.products) {
+                return values;
             }
+            var keys = Object.keys(this.state.filters);
+            var fs = this.state.filters
+            var filtered = keys.filter(function (key) {
+                return fs[key]
+            });
 
-            // bool filters
-            var flag = true;
-            if(lowercaseFs.length > 0){
-                for(var f of itemFilters){
-                    if(lowercaseFs.includes(f)){
-                        flag = false;
-                        break;
+            var lowercaseFs = !!this.state.filters ? filtered.map(f => f.toLowerCase()).filter(f => f !== 'search') : []
+            var lower = this.state.filters.search ? this.state.filters.search.toLowerCase() : undefined
+
+            for (var i = 0; i < Math.min(8, props.products.length); i++) {
+                var item = props.products[i];
+                var itemFilters = !!item.filters ? item.filters.map(f => f.toLowerCase()) : []
+
+                // search filter
+                if (this.state.filters && !!this.state.filters.search && Object.keys(this.state.filters).includes("search")) {
+                    if (!item.description.toLowerCase().includes(lower) && !item.title.toLowerCase().includes(lower)) {
+                        continue;
                     }
                 }
-                if(flag){
-                    continue
+
+                // bool filters
+                var flag = true;
+                if (lowercaseFs.length > 0) {
+                    for (var f of itemFilters) {
+                        if (lowercaseFs.includes(f)) {
+                            flag = false;
+                            break;
+                        }
+                    }
+                    if (flag) {
+                        continue
+                    }
                 }
-            }
-            
 
 
-            
-            var img = ""
-            switch (item.image) {
-                case "balance":
-                    img = balance;
-                    break;
-                case "radar":
-                    img = radar;
-                    break;
-                case "shield":
-                    img = shield;
-                    break;
-                case "globe":
-                    img = globe;
-                    break;
-                default:
-                    img = globe;
-                    break;
-            }
-    
-            values.push(
-                <div key={i} className='product'>
-                    <div className='product__topcontainer'>
-                        <img src={img} alt={item.image} className='product__topcontainer--image' />
-                        <div className='product__topcontainer--content'>
-                            <div className='product__topcontainer--content-top'>
-                                <div style={{ display: 'flex', alignItems: 'center' }}>
-                                    <img src={balloonist} alt={"Author"} className='product__topcontainer--content-top__avatar' />
-                                    <p className='product__topcontainer--content-top__author'>BALLONIST.XYZ</p>
-                                    <p className='product__topcontainer--content-top__dot'>•</p>
-                                    <p className='product__topcontainer--content-top__date'>{item.date}</p>
-                                    <button className='product__topcontainer--content-top__new'>NEW PRODUCT!</button>
+
+
+                var img = ""
+                switch (item.image) {
+                    case "balance":
+                        img = balance;
+                        break;
+                    case "radar":
+                        img = radar;
+                        break;
+                    case "shield":
+                        img = shield;
+                        break;
+                    case "globe":
+                        img = globe;
+                        break;
+                    default:
+                        img = globe;
+                        break;
+                }
+
+                values.push(
+                    <div key={i} className='product'>
+                        <div className='product__topcontainer'>
+                            <img src={img} alt={item.image} className='product__topcontainer--image' />
+                            <div className='product__topcontainer--content'>
+                                <div className='product__topcontainer--content-top'>
+                                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                                        <img src={balloonist} alt={"Author"} className='product__topcontainer--content-top__avatar' />
+                                        <p className='product__topcontainer--content-top__author'>BALLONIST.XYZ</p>
+                                        <p className='product__topcontainer--content-top__dot'>•</p>
+                                        <p className='product__topcontainer--content-top__date'>{item.date}</p>
+                                        <button className='product__topcontainer--content-top__new'>NEW PRODUCT!</button>
+                                    </div>
+                                    <a href={item.link} target="_blank" rel="noreferrer"><button className={`card__linkcontainer--button button-no-border ${`button-${item.linkcolor}`}`}>{item.linktype}</button></a>
                                 </div>
-                                <a href={item.link} target="_blank" rel="noreferrer"><button className={`card__linkcontainer--button button-no-border ${`button-${item.linkcolor}`}`}>{item.linktype}</button></a>
+                                <div className='product__topcontainer--content-titlecontainer'>
+                                    <p className='product__topcontainer--content-titlecontainer__title'>{item.title}</p>
+                                </div>
+                                <div className='product__topcontainer--content-labelcontainer'>
+                                    <button className='product__topcontainer--content-labelcontainer__button'>OPERATIONAL</button>
+                                </div>
+                                <div className='product__topcontainer--content-descriptioncontainer'>
+                                    <p className='product__topcontainer--content-descriptioncontainer__text'>{item.description}</p>
+                                </div>
                             </div>
-                            <div className='product__topcontainer--content-titlecontainer'>
-                                <p className='product__topcontainer--content-titlecontainer__title'>{item.title}</p>
+                        </div>
+                        <div className='product__bottomcontainer'>
+                            <div className='product__bottomcontainer--tags'>
+                                <CreateTags tags={item.tags} />
                             </div>
-                            <div className='product__topcontainer--content-labelcontainer'>
-                                <button className='product__topcontainer--content-labelcontainer__button'>OPERATIONAL</button>
-                            </div>
-                            <div className='product__topcontainer--content-descriptioncontainer'>
-                                <p className='product__topcontainer--content-descriptioncontainer__text'>{item.description}</p>
+                            <div className='product__bottomcontainer--more'>
                             </div>
                         </div>
                     </div>
-                    <div className='product__bottomcontainer'>
-                        <div className='product__bottomcontainer--tags'>
-                            <CreateTags tags={item.tags} />
-                        </div>
-                        <div className='product__bottomcontainer--more'>
-                        </div>
-                    </div>
-                </div>
-            )
+                )
+            }
+        } catch (err) {
+            console.error(err)
         }
         return values;
     }
 
     setSearchFilter = (str) => {
-        console.log("xd" + " " + str)
         var current = this.state.filters
         current["search"] = str
         this.setState({
@@ -145,7 +148,6 @@ class Products extends Component {
     }
 
     setBoolFilter = (key) => {
-        console.log("yo" + " " + key)
         var current = this.state.filters
         current[key] = !!current[key] ? !current[key] : true
         this.setState({
@@ -160,25 +162,23 @@ class Products extends Component {
                 products: response.data
             })
         }
-        if(this.state.availableFilters.length === 0){
+        if (this.state.availableFilters.length === 0) {
             var responseFilters = await axios.get("https://backend.balloonist.workers.dev/filters")
             this.setState({
-              availableFilters: responseFilters.data
+                availableFilters: responseFilters.data
             })
-          }
+        }
     }
 
-    CreateFilter = (props) => {
-        console.log("filter" + " " + props)
+    CreateFilter(props){
         var values = [];
-        if(!props.names){
+        if (!props.names) {
             return values;
         }
-        for (var j = 0; j < props.names.length; j++) {
-            var name = props.names[j]
+        for (var name of props.names) {
             values.push(
                 <div key={name} className='pslide1__content--products-filters__container--filters-filter'>
-                    <input data-key={name} type="checkbox" className='pslide1__content--products-filters__container--filters-filter__check' onClick={(e) => this.setBoolFilter(e.target.getAttribute("data-key"))}/>
+                    <input data-key={name} type="checkbox" className='pslide1__content--products-filters__container--filters-filter__check' onClick={(e) => this.setBoolFilter(e.target.getAttribute("data-key"))} />
                     <p className='pslide1__content--products-filters__container--filters-filter__label'>{name}</p>
                 </div>
             )
@@ -187,20 +187,23 @@ class Products extends Component {
     }
 
     CreateFilters = () => {
-        console.log("hello" + " " + this.state.availableFilters.length)
         var values = [];
-        for (var filters of this.state.availableFilters) {
-            console.log(filters)
-            values.push(
-                <div key={filters.title} className='pslide1__content--products-filters__container'>
-                    <p className='pslide1__content--products-filters__container--title'>{filters.title}</p>
-                    <div className='pslide1__content--products-filters__container--filters'>
-                        <this.CreateFilter names={filters.filters}/>
+        try {
+            for (var filters of this.state.availableFilters) {
+                values.push(
+                    <div key={filters.title} className='pslide1__content--products-filters__container'>
+                        <p className='pslide1__content--products-filters__container--title'>{filters.title}</p>
+                        <div className='pslide1__content--products-filters__container--filters'>
+                            <this.CreateFilter names={filters.filters} />
+                        </div>
                     </div>
-                </div>
-            )
+                )
+            }
+            return values
+        } catch (error) {
+            console.error(error)
+            return values
         }
-        return values
     }
 
 
@@ -220,7 +223,7 @@ class Products extends Component {
                         </div>
                         <div className='pslide1__content--products'>
                             <div className='pslide1__content--products-filters'>
-                                <this.CreateFilters/>
+                                <this.CreateFilters />
                             </div>
                             <div className='pslide1__content--products-content'>
                                 <div className='pslide1__content--products-content__searchcontainer'>
