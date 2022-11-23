@@ -36,7 +36,9 @@ class Products extends Component {
 
     CreateProducts = (props) => {
         var values = [];
-
+        if(!props.products){
+            return values;
+        }
         var keys = Object.keys(this.state.filters);
         var fs = this.state.filters
         var filtered = keys.filter(function(key) {
@@ -209,7 +211,7 @@ class Products extends Component {
                         </div>
                         <div className='pslide1__content--products'>
                             <div className='pslide1__content--products-filters'>
-                                <this.CreateFilters/>
+                                {/* <this.CreateFilters/> */}
                             </div>
                             <div className='pslide1__content--products-content'>
                                 <div className='pslide1__content--products-content__searchcontainer'>
