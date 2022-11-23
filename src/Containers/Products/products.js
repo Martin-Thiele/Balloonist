@@ -32,8 +32,57 @@ class Products extends Component {
 
             }
         }
+        this.CreateFilter = this.CreateFilter.bind(this);
+        // this.setBoolFilter = this.setBoolFilter.bind(this);
     }
 
+    setBoolFilter = (key) => {
+        var current = this.state.filters
+        current[key] = !!current[key] ? !current[key] : true
+        this.setState({
+            filters: current
+        })
+        console.log(this.state.filters)
+    }
+    CreateFilter = (props) => {
+        var values = [];
+        if (!props.names) {
+            return values;
+        }
+        for (var name of props.names) {
+            values.push(
+                <div key={name} className='pslide1__content--products-filters__container--filters-filter'>
+                    <input data-key={name} type="checkbox" className='pslide1__content--products-filters__container--filters-filter__check' onClick={(e) => this.setBoolFilter(e.target.getAttribute("data-key"))} />
+                    <p className='pslide1__content--products-filters__container--filters-filter__label'>{name}</p>
+                </div>
+            )
+        }
+        return values
+    }
+    setSearchFilter = (str) => {
+        var current = this.state.filters
+        current["search"] = str
+        this.setState({
+            filters: current
+        })
+    }
+
+    async componentDidMount() {
+        var products = []
+        if (this.state.products.length === 0) {
+            var response = await axios.get("https://backend.balloonist.workers.dev/products")
+            products = response.data
+        }
+        var filters = []
+        if (this.state.availableFilters.length === 0) {
+            var responseFilters = await axios.get("https://backend.balloonist.workers.dev/filters")
+            filters = responseFilters.data
+        }
+        this.setState({
+            availableFilters: filters,
+            products: products
+        })
+    }
     CreateProducts = (props) => {
         var values = [];
         try {
@@ -139,52 +188,7 @@ class Products extends Component {
         return values;
     }
 
-    setSearchFilter = (str) => {
-        var current = this.state.filters
-        current["search"] = str
-        this.setState({
-            filters: current
-        })
-    }
 
-    setBoolFilter = (key) => {
-        var current = this.state.filters
-        current[key] = !!current[key] ? !current[key] : true
-        this.setState({
-            filters: current
-        })
-    }
-
-    async componentDidMount() {
-        if (this.state.products.length === 0) {
-            var response = await axios.get("https://backend.balloonist.workers.dev/products")
-            this.setState({
-                products: response.data
-            })
-        }
-        if (this.state.availableFilters.length === 0) {
-            var responseFilters = await axios.get("https://backend.balloonist.workers.dev/filters")
-            this.setState({
-                availableFilters: responseFilters.data
-            })
-        }
-    }
-
-    CreateFilter(props){
-        var values = [];
-        if (!props.names) {
-            return values;
-        }
-        for (var name of props.names) {
-            values.push(
-                <div key={name} className='pslide1__content--products-filters__container--filters-filter'>
-                    <input data-key={name} type="checkbox" className='pslide1__content--products-filters__container--filters-filter__check' onClick={(e) => this.setBoolFilter(e.target.getAttribute("data-key"))} />
-                    <p className='pslide1__content--products-filters__container--filters-filter__label'>{name}</p>
-                </div>
-            )
-        }
-        return values
-    }
 
     CreateFilters = () => {
         var values = [];
