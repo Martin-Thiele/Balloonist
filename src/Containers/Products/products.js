@@ -36,7 +36,6 @@ class Products extends Component {
     }
 
     CreateProducts = (props) => {
-        console.log("prod", props)
         var values = [];
         if(!props.products){
             return values;
@@ -215,7 +214,7 @@ class Products extends Component {
                         </div>
                         <div className='pslide1__content--products'>
                             <div className='pslide1__content--products-filters'>
-                                {/* <this.CreateFilters/> */}
+                                <this.CreateFilters/>
                             </div>
                             <div className='pslide1__content--products-content'>
                                 <div className='pslide1__content--products-content__searchcontainer'>
