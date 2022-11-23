@@ -171,6 +171,9 @@ class Products extends Component {
     CreateFilter = (props) => {
         console.log("filter" + " " + props)
         var values = [];
+        if(!props.names){
+            return values;
+        }
         for (var j = 0; j < props.names.length; j++) {
             var name = props.names[j]
             values.push(
