@@ -31,7 +31,7 @@ function Carousel(props) {
         img = shield;
         break;
       case "globe":
-        img = sun;
+        img = globe;
         break;
       case "sun":
           img = sun;
