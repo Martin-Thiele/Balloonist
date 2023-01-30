@@ -4,6 +4,17 @@
     background-repeat: no-repeat;
     max-width: 100%;
     height: 2070px;
+
+    // Bit of a silly way to do it, haven't fixed this page same way there's no longer a height on the index page
+    @media screen and (max-width: 1600px) {
+        height: 2350px;
+    }
+    @media screen and (max-width: 1450px) {
+        height: 2650px;
+    }
+    @media screen and (max-width: 1200px) {
+        height: 2450px;
+    }
     @include respond(phone){
         height: 3200px;
     }
