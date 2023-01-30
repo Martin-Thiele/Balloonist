@@ -4,11 +4,15 @@ import Banner from '../../Components/Banner/banner'
 import { Component, Fragment } from "react";
 import axios from 'axios';
 
-import balance from '../Index/img/balance.png'
-import radar from '../Index/img/radar.png'
-import shield from '../Index/img/shield.png'
-import globe from '../Index/img/globe.png'
+import tune from './img/tune.png'
+import close from './img/close.png'
+import balance from './img/balance.png'
+import radar from './img/radar.png'
+import shield from './img/shield.png'
+import globe from './img/globe.png'
+import sun from './img/sun.png'
 import balloonist from '../Index/img/balloonist.png'
+
 
 function CreateTags(props) {
     var values = [];
@@ -26,14 +30,18 @@ class Products extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            phoneFilterOpen: false,
             products: [],
             availableFilters: [],
             filters: {
-
             }
         }
         this.CreateFilters = this.CreateFilters.bind(this);
         this.CreateFilter = this.CreateFilter.bind(this);
+    }
+
+    handlePhoneFilter(b){
+        this.setState({phoneFilterOpen: b})
     }
 
     setBoolFilter(e){
@@ -55,7 +63,7 @@ class Products extends Component {
         for (var name of props.names) {
             values.push(
                 <div key={name} className='pslide1__content--products-filters__container--filters-filter'>
-                    <input data-key={name} type="checkbox" className='pslide1__content--products-filters__container--filters-filter__check' onClick={(e) => this.setBoolFilter(e)} />
+                    <input data-key={name} defaultChecked={this.state.filters[name]} type="checkbox" className='pslide1__content--products-filters__container--filters-filter__check' onClick={(e) => this.setBoolFilter(e)} />
                     <p className='pslide1__content--products-filters__container--filters-filter__label'>{name}</p>
                 </div>
             )
@@ -144,6 +152,9 @@ class Products extends Component {
                     case "globe":
                         img = globe;
                         break;
+                        case "sun":
+                            img = sun;
+                            break;
                     default:
                         img = globe;
                         break;
@@ -217,6 +228,17 @@ class Products extends Component {
     render() {
         return (
             <Fragment>
+                {this.state.phoneFilterOpen && 
+                    <div className='phoneFilter'>
+                        <div className='phoneFilter__title'>
+                            <p className='phoneFilter__title--text'>FILTERS</p>
+                            <img alt='close' onClick={() => this.handlePhoneFilter(false)} src={close} className='phoneFilter__title--close'/>
+                        </div>
+                        <div className='phoneFilter__container'>
+                            <this.CreateFilters />
+                        </div>
+                    </div>
+                }
                 <div className='pslide1'>
                     <div className='pslide1__overlay'>
                         <div className='pslide1__overlay--ellipse3'></div>
@@ -235,6 +257,10 @@ class Products extends Component {
                             <div className='pslide1__content--products-content'>
                                 <div className='pslide1__content--products-content__searchcontainer'>
                                     <input type="text" onChange={(e) => this.setSearchFilter(e.target.value)} className='pslide1__content--products-content__searchcontainer--search' placeholder={"Search..."} />
+                                </div>
+                                <div onClick={() => this.handlePhoneFilter(true)} className='pslide1__content--products-content__phonefilter'>
+                                    <img className='pslide1__content--products-content__phonefilter--img' src={tune} alt="Filters"/>
+                                    <p className='pslide1__content--products-content__phonefilter--text'>FILTER</p>
                                 </div>
                                 <div className='pslide1__content--products-content__productcontainer'>
                                     <this.CreateProducts products={this.state.products} />

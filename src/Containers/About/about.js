@@ -102,7 +102,7 @@ function About() {
                                 </div>
                                 <div className='aslide1__content--social-right__container--bottom'>
                                     <p className='aslide1__content--social-right__container--bottom-text'>
-                                        Looking forward to connect with you.
+                                        Looking forward to connecting with you.
                                     </p>
                                 </div>
                             </div>

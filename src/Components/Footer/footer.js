@@ -55,13 +55,13 @@ function Footer() {
           <h4>QUICK NAVIGATION</h4>
           <div className="footer__rightcontainer--subcontainer-links">
             <div className="footer__rightcontainer--subcontainer-links__linkcontainer">
-              <a href="/products" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">Products</a>
+              <NavLink to="/products" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">Products</NavLink>
             </div>
             <div className="footer__rightcontainer--subcontainer-links__linkcontainer">
               <a href="https://docs.google.com/spreadsheets/d/1eZa4Vl6o5gSPp5wDF9kDwH2ztCjjwyLxnnQMvUj8uYo/edit#gid=0" target="_blank" rel="noreferrer" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">Tasks</a>
             </div>
             <div className="footer__rightcontainer--subcontainer-links__linkcontainer">
-              <a href="/about" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">About</a>
+              <NavLink to="/about" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">About</NavLink>
             </div>
             <div className="footer__rightcontainer--subcontainer-links__linkcontainer">
               {/* <a href="/compass" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">The compass</a> */}
@@ -72,13 +72,13 @@ function Footer() {
           <h4>LEGAL</h4>
           <div className="footer__rightcontainer--subcontainer-links">
             <div className="footer__rightcontainer--subcontainer-links__linkcontainer">
-              <a href="" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">Privacy policy</a>
+              <a href="/" target="_blank" rel="noreferrer" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">Privacy policy</a>
             </div>
             <div className="footer__rightcontainer--subcontainer-links__linkcontainer">
-              <a href="" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">Cookie policy</a>
+              <a href="/" target="_blank" rel="noreferrer" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">Cookie policy</a>
             </div>
             <div className="footer__rightcontainer--subcontainer-links__linkcontainer">
-              <a href="" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">Legal disclaimer</a>
+              <a href="/" target="_blank" rel="noreferrer" className="footer__rightcontainer--subcontainer-links__linkcontainer--link">Legal disclaimer</a>
             </div>
           </div>
         </div>

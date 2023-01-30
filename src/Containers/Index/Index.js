@@ -9,6 +9,7 @@ import balance from './img/balance.png'
 import radar from './img/radar.png'
 import shield from './img/shield.png'
 import globe from './img/globe.png'
+import sun from './img/sun.png'
 import Banner from '../../Components/Banner/banner'
 
 
@@ -30,8 +31,11 @@ function Carousel(props) {
         img = shield;
         break;
       case "globe":
-        img = globe;
+        img = sun;
         break;
+      case "sun":
+          img = sun;
+          break;
       default:
         img = globe;
         break;
